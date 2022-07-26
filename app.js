@@ -14,14 +14,14 @@ var app = express();
 
 // database conection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://algios:feynman1104@cluster0.6ijvfnk.mongodb.net/?retryWrites=true&w=majority';
+var mongoDB = process.env.MONGODBCONNECTION;
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 // middlewares
 app.use(logger('dev'));
