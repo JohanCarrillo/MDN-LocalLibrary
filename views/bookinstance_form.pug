@@ -1,8 +1,10 @@
 extends layout
 
 block content
-  h1=title
+  h1= title
 
+  - const status_list = ['Available', 'Maintenance', 'Loaned', 'Reserved'];
+  
   form(method='POST' action='')
     div.form-group
       label(for='book') Book:
