@@ -172,7 +172,6 @@ exports.bookinstance_update_post = [
             due_back: req.body.due_back,
             _id: req.params.id
         });
-
         if (!errors.isEmpty()) {
             // There are errors. Render form again with sanitized values and error messages.
             Book.find({}, 'title')
