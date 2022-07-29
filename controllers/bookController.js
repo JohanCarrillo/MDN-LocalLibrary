@@ -100,7 +100,6 @@ exports.book_create_post = [
             req.body.genre = [];
             else
             req.body.genre = [req.body.genre];
-            console.log(req.body.genre);
         }
         next();
     },
@@ -243,7 +242,6 @@ exports.book_update_get = function(req, res, next) {
                 err.status = 404;
                 return next(err);
             }
-            // console.log(results.book.genre);
             // Success.
              // Mark our selected genres as checked.
             for (let genre of results.genres) {
